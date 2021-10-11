@@ -38,6 +38,7 @@ import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.SQL_REDO_FIELD
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TABLE_NAME_FIELD;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TEMPORARY_TABLE;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TIMESTAMP_FIELD;
+import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TIMESTAMP_FIELD_FORMATTED;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.COMMIT_TIMESTAMP_FIELD;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.XID_FIELD;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.THREAD_FIELD;
@@ -319,6 +320,7 @@ public class LogMinerThread implements Runnable {
               .put(SEG_OWNER_FIELD, row.getSegOwner())
               .put(TABLE_NAME_FIELD, row.getSegName())
               .put(TIMESTAMP_FIELD, row.getTimestamp())
+              .put(TIMESTAMP_FIELD_FORMATTED, "111")
               .put(SQL_REDO_FIELD, row.getSqlRedo())
               .put(OPERATION_FIELD, row.getOperation())
               .put(DATA_ROW_FIELD, dataSchemaStruct.getDataStruct())

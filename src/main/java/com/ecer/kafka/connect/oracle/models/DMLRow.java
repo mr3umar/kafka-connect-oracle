@@ -1,6 +1,9 @@
 package com.ecer.kafka.connect.oracle.models;
 
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DMLRow{
 
@@ -57,7 +60,14 @@ public class DMLRow{
     }    
 
     public Timestamp getTimestamp(){
-        return timestamp;
+        return new Timestamp(System.currentTimeMillis());
+        // return timestamp;
+    }
+
+    public String getDateFormatted(){
+        Date d = new Date(timestamp.getTime());
+        DateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return f.format(d);
     }
 
     public void setTimestamp(Timestamp timestamp){

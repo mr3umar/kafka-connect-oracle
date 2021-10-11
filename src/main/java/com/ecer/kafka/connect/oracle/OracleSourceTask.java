@@ -17,6 +17,7 @@ import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.SQL_REDO_FIELD
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TABLE_NAME_FIELD;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TEMPORARY_TABLE;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TIMESTAMP_FIELD;
+import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TIMESTAMP_FIELD_FORMATTED;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.ORA_DESUPPORT_CM_VERSION;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.OPERATION_DDL;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.DDL_TOPIC_POSTFIX;
@@ -326,6 +327,7 @@ public class OracleSourceTask extends SourceTask {
               .put(SEG_OWNER_FIELD, row.getSegOwner())
               .put(TABLE_NAME_FIELD, row.getSegName())
               .put(TIMESTAMP_FIELD, row.getTimeStamp())
+              .put(TIMESTAMP_FIELD_FORMATTED, row.getDateFormatted())
               .put(SQL_REDO_FIELD, row.getSqlRedo())
               .put(OPERATION_FIELD, row.getOperation())
               .put(DATA_ROW_FIELD, dataSchemaStruct.getDataStruct())

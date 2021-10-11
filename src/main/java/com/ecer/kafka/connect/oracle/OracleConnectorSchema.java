@@ -20,6 +20,7 @@ public class OracleConnectorSchema{
     public static final String SEG_OWNER_FIELD ="SEG_OWNER";
     public static final String TABLE_NAME_FIELD ="TABLE_NAME";
     public static final String TIMESTAMP_FIELD ="TIMESTAMP";
+    public static final String TIMESTAMP_FIELD_FORMATTED ="TIMESTAMP_FORMATTED";
     public static final String COMMIT_TIMESTAMP_FIELD ="COMMIT_TIMESTAMP";
     public static final String SQL_REDO_FIELD ="SQL_REDO";
     public static final String OPERATION_FIELD ="OPERATION";

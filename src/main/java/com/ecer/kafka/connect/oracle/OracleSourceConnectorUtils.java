@@ -23,6 +23,7 @@ import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.SEG_OWNER_FIEL
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.SQL_REDO_FIELD;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TABLE_NAME_FIELD;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TIMESTAMP_FIELD;
+import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TIMESTAMP_FIELD_FORMATTED;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TIMESTAMP_SCHEMA;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.TIMESTAMP_TYPE;
 import static com.ecer.kafka.connect.oracle.OracleConnectorSchema.UQ_COLUMN_FIELD;
@@ -417,6 +418,7 @@ public class OracleSourceConnectorUtils{
                   .field(SEG_OWNER_FIELD, Schema.STRING_SCHEMA)
                   .field(TABLE_NAME_FIELD,Schema.STRING_SCHEMA)
                   .field(TIMESTAMP_FIELD,org.apache.kafka.connect.data.Timestamp.SCHEMA)
+                  .field(TIMESTAMP_FIELD_FORMATTED,Schema.STRING_SCHEMA)
                   .field(SQL_REDO_FIELD, Schema.STRING_SCHEMA)
                   .field(OPERATION_FIELD, Schema.STRING_SCHEMA)
                   .field(DATA_ROW_FIELD, dataSchema)

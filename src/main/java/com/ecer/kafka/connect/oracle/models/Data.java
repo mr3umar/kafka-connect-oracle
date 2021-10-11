@@ -1,6 +1,9 @@
 package com.ecer.kafka.connect.oracle.models;
 
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *  
@@ -43,7 +46,15 @@ public class Data{
     }
 
     public Timestamp getTimeStamp(){
-        return timeStamp;
+        return new Timestamp(System.currentTimeMillis());
+
+        // return timeStamp;
+    }
+
+    public String getDateFormatted(){
+        Date d = new Date(timeStamp.getTime());
+        DateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //yyyy-MM-dd HH:mm:ss.SSS
+        return f.format(d);
     }
 
     public String getOperation(){
